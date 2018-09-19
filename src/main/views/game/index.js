@@ -3,6 +3,7 @@ import prLoadImg from '@/main/assets/prLoadImg'
 import Show from './show'
 import Tools from './tools'
 import BackPack from './backpack'
+import Trade from './trade'
 import HeadMessage from './headMessage'
 import Player from './role/player'
 /* 其他 */
@@ -31,7 +32,8 @@ export default class GameController {
     this.headMessage = null; // 头部信息控制器
     this.headMessageUI = null; // 头部信息UI对象
 
-
+    this.trade = null;
+    this.tradeUI = null;
     this.backpack = null; // 背包控制器
     this.backpackUI = null; //背包UI对象
     this.skill = null; // 技能栏控制器
@@ -87,13 +89,19 @@ export default class GameController {
     Store.setController(NAME.SHOWS, this.shows); 
 
     /* 创建游戏背包 */
-    this.backpackUI = new backpack1UI(); // 创建背包
+    this.backpackUI = new backpackUI(); // 创建背包
     this.backpack = new BackPack(this.backpackUI,{ // 创建一个背包控制器
       pos : [0, this.gameUI.head_message._height]
     });
     Store.setController(NAME.BAGPACK, this.backpack); 
     Laya.stage.addChild(this.backpackUI); // 装载一个背包到游戏
 
+    /* 创建交易行 */
+    this.tradeUI = new tradeUI(); // 创建背包
+    this.trade = new Trade(this.tradeUI,{ // 创建一个背包控制器
+    });
+    Store.setController(NAME.TRADE, this.trade); 
+    Laya.stage.addChild(this.tradeUI); // 装载一个背包到游戏
     
     // new Player().setAttrs({
     //   blood : 100,

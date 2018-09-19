@@ -1,6 +1,8 @@
 /**
  * 基础UI组件类
  */
+import { Obj } from '@/main/unit/tool'
+const { isDef } = Obj;
 export default class UI {
     
     constructor(ui){
@@ -16,14 +18,14 @@ export default class UI {
         fn.call(this,this);
         return this;
     }
-
-    show(){
-        this.ui.visible = true;
+ 
+    show(status){
+        this.ui.visible = isDef(status) ? status : true;
         return this;
     }
 
-    hide(){
-        this.ui.visible = false;
+    hide(status){
+        this.ui.visible = isDef(status) ? status : false;
         return this;
     }
 

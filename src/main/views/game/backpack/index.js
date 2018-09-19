@@ -78,18 +78,8 @@ export default class BackPackController extends UI{
     
 
     onTab(index){
-        switch (index) {
-        case 0:
-            this.equipmentsController.show();
-            this.consumablesController.hide();
-            break;
-        case 1:
-            this.consumablesController.show();
-            this.equipmentsController.hide();
-            break;
-        default:
-            
-        }
+        this.equipmentsController.show(!index);
+        this.consumablesController.show(!!index);
     }
 
     /* 展示物品信息 */

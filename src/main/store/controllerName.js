@@ -8,6 +8,7 @@ export default {
     TOOLS : 'toolsController',
     HEAD_MESSAGE : 'headMessageController',
     
+    TRADE : 'tradeController',
     BAGPACK : 'bagpackController',
     BAG_LIST : 'bagListController',
     BAG_LIST_SHOW : 'bagListShowController',
